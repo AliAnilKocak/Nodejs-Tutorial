@@ -15,4 +15,5 @@ const someClass = class someClass {
     }
 };
 
+
 module.exports = {sum: sum, div: div, someClass: someClass};
