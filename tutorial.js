@@ -1,3 +1,4 @@
+/*
 const sum = (number1, number2) => number1 + number2;
 const div = (number1, number2) => number1 - number2;
 const someClass = class someClass {
@@ -17,3 +18,4 @@ const someClass = class someClass {
 
 
 module.exports = {sum: sum, div: div, someClass: someClass};
+*/
