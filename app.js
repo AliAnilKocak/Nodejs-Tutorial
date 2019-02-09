@@ -92,6 +92,7 @@ const fs = require('fs');
 });*/
 
 
+/*
 fs.rename('data.txt', 'data2.txt', err => {
     if (err) {
         console.log(err);
@@ -105,6 +106,16 @@ fs.appendFile('data2.txt','AppendFile functions is worked :) \n',err => {
         console.log(err);
     }
     else{
-        console.log('Successfully');
+        console.log('Successfully appended data to file');
+    }
+});*/
+
+
+fs.unlink('data2.txt',err => {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log('Successfully deleted the file');
     }
 });
