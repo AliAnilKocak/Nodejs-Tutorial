@@ -41,7 +41,7 @@ anil.on('name', ()=>{
 
 anil.emit('name');*/
 
-const readLine = require('readline');
+/*const readLine = require('readline');
 const rl = readLine.createInterface({input: process.stdin, output: process.stdout});
 
 
@@ -69,7 +69,24 @@ rl.question(`What's ${num}+${num1}=? \n`, (userInput) => {
 
 rl.on('close',()=>{
     console.log('correct!!');
-})
+});*/
 
 
+const fs = require('fs');
+fs.writeFile('data.txt','Is there any programmer nere here?.',(err)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log('File Created');
+        fs.readFile('data.txt','utf8',(err,data)=>{
+            if (err){
+                console.log(err);
+            }
+            else{
+                console.log(data);
+            }
+        });
+    }
+});
 
