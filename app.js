@@ -73,7 +73,8 @@ rl.on('close',()=>{
 
 
 const fs = require('fs');
-fs.writeFile('data.txt','Is there any programmer nere here?.',(err)=>{
+
+/*fs.writeFile('data.txt','Is there any programmer nere here?.',(err)=>{
     if(err){
         console.log(err);
     }
@@ -88,5 +89,22 @@ fs.writeFile('data.txt','Is there any programmer nere here?.',(err)=>{
             }
         });
     }
+});*/
+
+
+fs.rename('data.txt', 'data2.txt', err => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('Successfully file renamed');
+    }
 });
 
+fs.appendFile('data2.txt','AppendFile functions is worked :) \n',err => {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log('Successfully');
+    }
+});
