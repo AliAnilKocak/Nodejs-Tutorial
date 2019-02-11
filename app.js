@@ -6,9 +6,8 @@ console.log(new tutorial.someClass());
 console.log(new tutorial.someClass().inClass(25, 5));//Export module
 */
 
-/*
 
-const EventEmitter = require('events');
+/*const EventEmitter = require('events');
 const eventEmitter = new EventEmitter();
 
 
@@ -35,9 +34,7 @@ class Person extends EventEmitter {
 
 const anil = new Person("Anıl");
 
-anil.on('name', ()=>{
-    console.log("My Name Is "+anil.name);
-});
+into 
 
 anil.emit('name');*/
 
@@ -71,10 +68,10 @@ rl.on('close',()=>{
     console.log('correct!!');
 });*/
 
-
 const fs = require('fs');
 
-/*fs.writeFile('data.txt','Is there any programmer nere here?.',(err)=>{
+/*
+fs.writeFile('data.txt','Is there any programmer nere here?.',(err)=>{
     if(err){
         console.log(err);
     }
@@ -89,10 +86,9 @@ const fs = require('fs');
             }
         });
     }
-});*/
+});
 
 
-/*
 fs.rename('data.txt', 'data2.txt', err => {
     if (err) {
         console.log(err);
@@ -108,7 +104,7 @@ fs.appendFile('data2.txt','AppendFile functions is worked :) \n',err => {
     else{
         console.log('Successfully appended data to file');
     }
-});*/
+});
 
 
 fs.unlink('data2.txt',err => {
@@ -117,5 +113,56 @@ fs.unlink('data2.txt',err => {
     }
     else{
         console.log('Successfully deleted the file');
+    }
+});
+
+
+fs.mkdir('tutorial', err => {
+    if (err) {
+        console.log(err);
+    } else {
+        fs.writeFile('tutorial/data.txt', '123', (err) => {
+            if (err) {
+                console.log(err);
+
+            } else {
+                console.log('Files created');
+            }
+
+        });
+        console.log('Folder created');
+    }
+});
+
+
+fs.unlink('tutorial/data.txt', (err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('files deleted');
+    }
+});
+
+fs.rmdir('tutorial', (err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('Folder deleted');
+    }
+});*/
+
+fs.readdir('example', (err, files) => {
+    if (err) {
+        console.log(err);
+    } else {
+        for (let file of files) {
+            fs.unlink(`example/${file}`, (err) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log(`${file} is deleted`);
+                }
+            });
+        }
     }
 });
