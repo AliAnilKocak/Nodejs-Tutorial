@@ -68,9 +68,10 @@ rl.on('close',()=>{
     console.log('correct!!');
 });*/
 
+/*
 const fs = require('fs');
 
-/*
+
 fs.writeFile('data.txt','Is there any programmer nere here?.',(err)=>{
     if(err){
         console.log(err);
@@ -151,7 +152,7 @@ fs.rmdir('tutorial', (err) => {
     }
 });*/
 
-fs.readdir('example', (err, files) => {
+/*fs.readdir('example', (err, files) => {
     if (err) {
         console.log(err);
     } else {
@@ -165,4 +166,14 @@ fs.readdir('example', (err, files) => {
             });
         }
     }
+});*/
+
+
+
+const fs = require('fs');
+const readableStrem  = fs.createReadStream('example.txt','utf8');
+const writableStream = fs.createWriteStream('example2.txt');
+
+readableStrem.on('data',(chunk)=>{
+    writableStream.write(chunk);
 });
