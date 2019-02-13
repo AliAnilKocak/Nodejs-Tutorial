@@ -168,12 +168,33 @@ fs.rmdir('tutorial', (err) => {
     }
 });*/
 
+/*
+const fs = require('fs');
+const readableStream  = fs.createReadStream('example.txt','utf8');
+const writeableStream = fs.createWriteStream('example2.txt');
+
+readableStream.on('data',(chunk)=>{
+    writableStream.write(chunk);
+});
+*/
+
 
 
 const fs = require('fs');
-const readableStrem  = fs.createReadStream('example.txt','utf8');
-const writableStream = fs.createWriteStream('example2.txt');
 
-readableStrem.on('data',(chunk)=>{
-    writableStream.write(chunk);
+fs.readFile('big.txt','utf8',(err,file)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+
+        console.log(file);
+    }
+});
+
+
+const rs = fs.createReadStream('big.txt','utf8');
+
+rs.on('data',(chunk)=>{
+    console.log(chunk);
 });
