@@ -180,6 +180,7 @@ readableStream.on('data',(chunk)=>{
 
 
 
+/*
 const fs = require('fs');
 
 fs.readFile('big.txt','utf8',(err,file)=>{
@@ -197,4 +198,22 @@ const rs = fs.createReadStream('big.txt','utf8');
 
 rs.on('data',(chunk)=>{
     console.log(chunk);
-});
+});*/
+
+
+
+
+const fs = require('fs');
+const zlib = require('zlib');
+const gzip = zlib.createGzip();  //Compress
+const rs = fs.createReadStream('example.txt');
+const ws = fs.createWriteStream('example.txt.gz');
+rs.pipe(gzip).pipe(ws);
+
+const fs = require('fs');
+const zlib = require('zlib');
+const gunzip = zlib.createGunzip(); //Uncompress
+const rs = fs.createReadStream('example.txt.gz');
+const ws = fs.createWriteStream('extractedFile.txt');
+rs.pipe(gunzip ).pipe(ws);
+
