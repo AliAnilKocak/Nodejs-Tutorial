@@ -6,7 +6,6 @@ console.log(new tutorial.someClass());
 console.log(new tutorial.someClass().inClass(25, 5));//Export module
 */
 
-
 /*const EventEmitter = require('events');
 const eventEmitter = new EventEmitter();
 
@@ -178,8 +177,6 @@ readableStream.on('data',(chunk)=>{
 });
 */
 
-
-
 /*
 const fs = require('fs');
 
@@ -200,9 +197,7 @@ rs.on('data',(chunk)=>{
     console.log(chunk);
 });*/
 
-
-
-
+/*
 const fs = require('fs');
 const zlib = require('zlib');
 const gzip = zlib.createGzip();  //Compress
@@ -216,4 +211,24 @@ const gunzip = zlib.createGunzip(); //Uncompress
 const rs = fs.createReadStream('example.txt.gz');
 const ws = fs.createWriteStream('extractedFile.txt');
 rs.pipe(gunzip ).pipe(ws);
+*/
+
+const http = require('http');
+const server = http.createServer((req,res)=>{
+    if(req.url === '/'){
+        res.write('Hello World from Nodejs');
+        res.end();
+    }else {
+        res.write('Wrong path.');
+        res.end();
+    }
+
+});
+const port = '3000';
+
+server.listen(port);
+
+console.log('http://localhost:'+port);
+
+
 
