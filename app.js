@@ -239,9 +239,7 @@ http.createServer((req, res) => {
     readStream.pipe(res);
 }).listen(3000);*/
 
-
-
-"dependencies": {
+/*"dependencies": {
 
     "lodash": "^4.17.11"
 
@@ -251,7 +249,14 @@ http.createServer((req, res) => {
 
     "~4.17.11"=>major.minor.x
 
-}
+}*/
+
+const express = require('express');
+const app = express();
+
+app.get('/',(req,res)=>{
+   res.send('Hello world from Linux');;
+}).listen(3000);
 
 
 
