@@ -213,7 +213,7 @@ const ws = fs.createWriteStream('extractedFile.txt');
 rs.pipe(gunzip ).pipe(ws);
 */
 
-const http = require('http');
+/*const http = require('http');
 const server = http.createServer((req,res)=>{
     if(req.url === '/'){
         res.write('Hello World from Nodejs');
@@ -228,7 +228,55 @@ const port = '3000';
 
 server.listen(port);
 
-console.log('http://localhost:'+port);
+console.log('http://localhost:'+port);*/
+
+
+const http = require('http');
+const fs = require('fs');
+
+http.createServer((req, res) => {
+    const readStream = fs.createReadStream('static/index.html');
+    res.writeHead(200, {'Content-type': 'text/html'});
+    readStream.pipe(res);
+}).listen(3000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
