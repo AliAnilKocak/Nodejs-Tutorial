@@ -230,22 +230,28 @@ server.listen(port);
 
 console.log('http://localhost:'+port);*/
 
-
-const http = require('http');
+/*const http = require('http');
 const fs = require('fs');
 
 http.createServer((req, res) => {
     const readStream = fs.createReadStream('static/index.html');
     res.writeHead(200, {'Content-type': 'text/html'});
     readStream.pipe(res);
-}).listen(3000);
+}).listen(3000);*/
 
 
 
+"dependencies": {
 
+    "lodash": "^4.17.11"
 
+    major.minor.patch
 
+    "^4.17.11"=>major.x.x
 
+    "~4.17.11"=>major.minor.x
+
+}
 
 
 
