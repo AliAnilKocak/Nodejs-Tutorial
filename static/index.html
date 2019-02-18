@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-
-
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-<title style="text-align: center" >Hello, world</title>
-<link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
-    </head >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
-    <body  style="text-align: center" >
-    <h1 style="text-align: center" >Hello, world</h1>
+    <link href="/public/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/signin.css" rel="stylesheet">
+</head>
 
+<body class="text-center">
+<form class="form-signin">
+
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
 </body>
-
 </html>

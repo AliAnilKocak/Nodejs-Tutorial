@@ -262,16 +262,29 @@ app.get('/',(req,res)=>{
 
 */
 
+/*
 const express = require('express');
 const app = express();
 
 app.get('/user/:name/:age',(req,res)=>{
    res.send(`Hello My Name is ${req.params.name} and I'm ${req.params.age} years old. id = ${req.query.id}`);
 }).listen(3000);
+*/
+
+
+const express = require('express');
+const path = require('path');
+const app = express();
+
+
+app.use('/public',express.static(__dirname+'/static/css'));
 
 
 
+app.get('/',(req,res)=>{
+   res.sendFile(path.join(__dirname,'static','index.html'));
 
+}).listen(3000);
 
 
 
