@@ -251,6 +251,7 @@ http.createServer((req, res) => {
 
 }*/
 
+/*
 const express = require('express');
 const app = express();
 
@@ -258,6 +259,15 @@ app.get('/',(req,res)=>{
    res.send('Hello world from Linux');;
 }).listen(3000);
 
+
+*/
+
+const express = require('express');
+const app = express();
+
+app.get('/user/:name/:age',(req,res)=>{
+   res.send(`Hello My Name is ${req.params.name} and I'm ${req.params.age} years old. id = ${req.query.id}`);
+}).listen(3000);
 
 
 
