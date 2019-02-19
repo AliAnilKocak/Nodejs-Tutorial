@@ -271,25 +271,46 @@ app.get('/user/:name/:age',(req,res)=>{
 }).listen(3000);
 */
 
-
-const express = require('express');
+/*const express = require('express');
 const path = require('path');
 const app = express();
 
-
 app.use('/public',express.static(__dirname+'/static/css'));
-
 
 
 app.get('/',(req,res)=>{
    res.sendFile(path.join(__dirname,'static','index.html'));
 
-}).listen(3000);
+}).listen(3000);*/
+
+const express = require('express');
+const path = require('path');
+const app = express();
+const bodyParser = require('body-parser');
 
 
+app.use('/public', express.static(__dirname + '/static/css'));
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use('/public', express.static(__dirname + '/static/css'));
 
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'static', 'index.html'));
 
+});
+
+
+app.post('/', (req, res) => {
+    if (req.body.email === "alianilkocak@gmail.com" && req.body.password === "nodejs") {
+       res.send('Login successfull');
+    } else {
+        res.send('Login failed');
+    }
+    res.end();
+});
+
+app.listen(3000);
 
 
 
