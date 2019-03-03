@@ -302,7 +302,7 @@ app.get('/', (req, res) => {
 
 
 app.post('/', (req, res) => {
-    if (req.body.email === "alianilkocak@gmail.com" && req.body.password === "nodejs") {
+    if (req.body.email ===  "alianilkocak@gmail.com" && req.body.password === "nodejs") {
        res.send('Login successfull');
     } else {
         res.send('Login failed');
@@ -310,7 +310,7 @@ app.post('/', (req, res) => {
     res.end();
 });
 
-app.listen(3000);
+app.listen(3030);
 
 
 
