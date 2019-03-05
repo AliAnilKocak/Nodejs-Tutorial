@@ -292,7 +292,7 @@ const bodyParser = require('body-parser');
 app.use('/public', express.static(__dirname + '/static/css'));
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/public', express.static(__dirname + '/static/css'));
+app.use(bodyParser.json());
 
 
 app.get('/', (req, res) => {
@@ -300,17 +300,13 @@ app.get('/', (req, res) => {
 
 });
 
-
 app.post('/', (req, res) => {
-    if (req.body.email ===  "alianilkocak@gmail.com" && req.body.password === "nodejs") {
-       res.send('Login successfull');
-    } else {
-        res.send('Login failed');
-    }
+    console.log("successfully");
+    res.json({status: true});
     res.end();
 });
 
-app.listen(3030);
+app.listen(3000);
 
 
 
