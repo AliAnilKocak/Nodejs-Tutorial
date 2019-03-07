@@ -14,11 +14,14 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
-          <h1>You Searched For : Stuff</h1>
+          <h1>You Searched For : <%= data.userQuery %></h1>
+          <% if(data.loggedIn){ %>
+                <h2> You are logg in as : <%= data.username %> </h2>
+            <% } %>
           <ul>
-            <li>dummy data</li>
-            <li>dummy data</li>
-            <li>dummy data</li>
+            <% data.searchResults.forEach(result=>{ %>
+                <li> <%= result %> </li> 
+            <% }); %>
           </ul>
         </div>
         <div class="col-lg-4"></div>
